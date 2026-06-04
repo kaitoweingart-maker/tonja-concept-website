@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TONJA — Design &amp; Fashion Concept Store | Basel · Gstaad · Geneva</title>
+<meta name="description" content="TONJA Concept — a curated design and fashion concept store. Bold, colourful, one of a kind. Visit us in Basel, Gstaad and Geneva. Zürich coming soon.">
+<meta name="theme-color" content="#43c3f0">
+<link rel="canonical" href="https://www.tonjaconcept.ch/">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="TONJA — Design &amp; Fashion Concept Store">
+<meta property="og:description" content="A curated design and fashion concept store. Bold, colourful, one of a kind. Basel · Gstaad · Geneva.">
+<meta property="og:image" content="https://www.tonjaconcept.ch/assets/img/love_1600.jpg">
+<meta property="og:url" content="https://www.tonjaconcept.ch/">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%2343c3f0'/%3E%3Ctext x='50' y='58' font-family='Helvetica,Arial,sans-serif' font-size='52' font-weight='700' fill='white' text-anchor='middle' dominant-baseline='middle'%3ET%3C/text%3E%3Ccircle cx='66' cy='30' r='6' fill='white'/%3E%3C/svg%3E">
+
+<!-- Preload the hero artwork so it paints instantly -->
+<link rel="preload" as="image" href="assets/img/love_1600.webp" type="image/webp" media="(min-width:700px)">
+<link rel="preload" as="image" href="assets/img/love_600.webp" type="image/webp" media="(max-width:699px)">
+<link rel="preload" as="image" href="assets/img/logo_hero.webp" type="image/webp">
+
+<!-- Structured data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Store",
+  "name": "TONJA Concept",
+  "description": "Design and fashion concept store.",
+  "image": "https://www.tonjaconcept.ch/assets/img/love_1600.jpg",
+  "url": "https://www.tonjaconcept.ch/",
+  "email": "welcome@tonjaconcept.ch",
+  "address": [
+    {"@type":"PostalAddress","streetAddress":"Rheinsprung 1","postalCode":"4051","addressLocality":"Basel","addressCountry":"CH"},
+    {"@type":"PostalAddress","streetAddress":"Freie Strasse 44","postalCode":"4051","addressLocality":"Basel","addressCountry":"CH"},
+    {"@type":"PostalAddress","streetAddress":"Promenade 4","postalCode":"3780","addressLocality":"Gstaad","addressCountry":"CH"},
+    {"@type":"PostalAddress","streetAddress":"Rue de la Confédération 8","postalCode":"1204","addressLocality":"Genève","addressCountry":"CH"}
+  ]
+}
+</script>
+
+<style>
+/* ---------- Reset / tokens ---------- */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --cyan:#43c3f0;
+  --cyan-deep:#1ba6da;
+  --navy:#0e2236;
+  --ink:#13283d;
+  --paper:#ffffff;
+  --soft:#f4f9fc;
+  --line:#e4edf3;
+  --pink:#ff3d8b;
+  --lime:#7bd64b;
+  --tang:#ff8a3d;
+  --grape:#9b5de5;
+  --max:1180px;
+  --r:18px;
+  --shadow:0 18px 50px -20px rgba(14,34,54,.28);
+  --ease:cubic-bezier(.2,.7,.2,1);
+}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  font-family:"Helvetica Neue",Helvetica,Arial,system-ui,sans-serif;
+  color:var(--ink);background:var(--paper);
+  line-height:1.6;font-size:17px;
+  overflow-x:hidden;
+}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit;text-decoration:none}
+h1,h2,h3{line-height:1.08;font-weight:700;letter-spacing:-.01em}
+section{padding:clamp(64px,9vw,128px) 0}
+.wrap{width:min(100% - 40px,var(--max));margin-inline:auto}
+.spaced{letter-spacing:.42em;text-transform:uppercase;font-weight:400}
+.eyebrow{font-size:13px;letter-spacing:.34em;text-transform:uppercase;color:var(--cyan-deep);font-weight:700;margin-bottom:18px}
+
+/* ---------- Buttons ---------- */
+.btn{
+  display:inline-flex;align-items:center;gap:.6em;
+  padding:15px 30px;border-radius:100px;font-weight:700;
+  letter-spacing:.04em;font-size:15px;cursor:pointer;border:2px solid transparent;
+  transition:transform .25s var(--ease),box-shadow .25s var(--ease),background .25s,color .25s;
+  will-change:transform;
+}
+.btn-primary{background:var(--cyan);color:#fff;box-shadow:0 12px 30px -10px rgba(67,195,240,.8)}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:0 18px 40px -12px rgba(67,195,240,.95)}
+.btn-ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.7)}
+.btn-ghost:hover{background:#fff;color:var(--navy);transform:translateY(-3px)}
+.btn-dark{background:var(--navy);color:#fff}
+.btn-dark:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
+
+/* ---------- Header ---------- */
+header{
+  position:fixed;inset:0 0 auto 0;z-index:50;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:14px clamp(16px,4vw,40px);
+  transition:background .35s,box-shadow .35s,padding .35s;
+}
+header.scrolled{background:rgba(255,255,255,.92);backdrop-filter:blur(12px);box-shadow:0 6px 24px -16px rgba(14,34,54,.5);padding-top:10px;padding-bottom:10px}
+.brand img{height:30px;width:auto;transition:filter .35s}
+/* logo is cyan; on the transparent hero it sits on dark, so add glow until scrolled */
+header:not(.scrolled) .brand img{filter:drop-shadow(0 2px 10px rgba(0,0,0,.45))}
+nav{display:flex;align-items:center;gap:clamp(16px,2.4vw,34px)}
+.navlink{font-size:14px;font-weight:600;letter-spacing:.06em;position:relative;color:#fff;transition:color .3s}
+header.scrolled .navlink{color:var(--ink)}
+.navlink::after{content:"";position:absolute;left:0;bottom:-6px;height:2px;width:0;background:var(--cyan);transition:width .3s var(--ease)}
+.navlink:hover::after{width:100%}
+.lang{display:flex;gap:2px;font-size:13px;font-weight:700;border:1.5px solid currentColor;border-radius:100px;overflow:hidden;color:#fff}
+header.scrolled .lang{color:var(--ink)}
+.lang button{background:none;border:0;color:inherit;cursor:pointer;padding:6px 11px;font:inherit;opacity:.55;transition:.25s}
+.lang button.on{background:var(--cyan);color:#fff;opacity:1}
+.burger{display:none;background:none;border:0;cursor:pointer;flex-direction:column;gap:5px;padding:8px}
+.burger span{width:24px;height:2px;background:#fff;border-radius:2px;transition:.3s}
+header.scrolled .burger span{background:var(--ink)}
+
+/* ---------- Hero ---------- */
+.hero{
+  position:relative;min-height:100svh;display:grid;place-items:center;text-align:center;
+  color:#fff;padding:120px 20px 80px;overflow:hidden;
+}
+.hero-bg{position:absolute;inset:0;z-index:-2}
+.hero-bg img{width:100%;height:100%;object-fit:cover}
+.hero::after{content:"";position:absolute;inset:0;z-index:-1;
+  background:radial-gradient(120% 92% at 50% 38%,rgba(14,34,54,.30),rgba(14,34,54,.70))}
+.hero-inner{max-width:880px;animation:rise .9s var(--ease) both}
+.wordmark{display:inline-block;width:min(760px,86vw);line-height:0}
+.wordmark img{width:100%;height:auto;
+  filter:drop-shadow(0 0 2px #fff) drop-shadow(0 0 16px rgba(255,255,255,.65)) drop-shadow(0 8px 24px rgba(0,0,0,.45))}
+.tagline{margin-top:26px;font-size:clamp(11px,1.7vw,16px)}
+.hero p.sub{margin:22px auto 34px;max-width:540px;font-size:clamp(15px,2vw,18px);opacity:.95;letter-spacing:.01em}
+.hero-cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.scrollcue{position:absolute;bottom:26px;left:50%;transform:translateX(-50%);font-size:11px;letter-spacing:.3em;text-transform:uppercase;opacity:.8;display:flex;flex-direction:column;align-items:center;gap:8px}
+.scrollcue span{width:1px;height:34px;background:#fff;animation:drop 1.8s var(--ease) infinite}
+
+/* ---------- Marquee ---------- */
+.marquee{background:var(--navy);color:#fff;padding:18px 0;overflow:hidden;white-space:nowrap}
+.marquee-track{display:inline-flex;gap:48px;animation:scrollx 26s linear infinite;will-change:transform}
+.marquee:hover .marquee-track{animation-play-state:paused}
+.marquee b{font-weight:400;letter-spacing:.34em;text-transform:uppercase;font-size:14px}
+.marquee .star{color:var(--cyan)}
+
+/* ---------- About ---------- */
+.about{background:var(--soft)}
+.about-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(32px,6vw,80px);align-items:center}
+.about h2{font-size:clamp(30px,4.4vw,52px);margin-bottom:22px}
+.about p+p{margin-top:16px}
+.figure{position:relative;border-radius:var(--r);overflow:hidden;box-shadow:var(--shadow)}
+.figure img{width:100%;aspect-ratio:4/3.1;object-fit:cover;transition:transform .9s var(--ease)}
+.figure:hover img{transform:scale(1.05)}
+.blob{position:absolute;border-radius:50%;filter:blur(2px);z-index:-1;opacity:.85}
+.stat-row{display:flex;gap:30px;margin-top:34px;flex-wrap:wrap}
+.stat b{display:block;font-size:34px;color:var(--cyan-deep);line-height:1}
+.stat span{font-size:13px;letter-spacing:.12em;text-transform:uppercase;opacity:.7}
+
+/* ---------- Stores ---------- */
+.stores h2{font-size:clamp(30px,4.4vw,52px);text-align:center;margin-bottom:14px}
+.stores .lead{text-align:center;max-width:560px;margin:0 auto 54px;opacity:.78}
+.store-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:22px}
+.card{
+  border:1px solid var(--line);border-radius:var(--r);padding:30px 28px;background:#fff;
+  position:relative;overflow:hidden;transition:transform .35s var(--ease),box-shadow .35s var(--ease),border-color .35s;
+}
+.card::before{content:"";position:absolute;left:0;top:0;height:100%;width:5px;background:var(--c,var(--cyan));transform:scaleY(0);transform-origin:top;transition:transform .4s var(--ease)}
+.card:hover{transform:translateY(-6px);box-shadow:var(--shadow);border-color:transparent}
+.card:hover::before{transform:scaleY(1)}
+.card .city{font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:var(--c,var(--cyan-deep));font-weight:700}
+.card h3{font-size:22px;margin:6px 0 12px}
+.card .addr{font-size:15px;opacity:.82;line-height:1.5}
+.card a.tel{display:inline-block;margin-top:14px;font-weight:600;color:var(--ink);border-bottom:2px solid var(--c,var(--cyan));padding-bottom:2px;transition:.25s}
+.card a.tel:hover{color:var(--cyan-deep)}
+.card.soon{display:flex;flex-direction:column;justify-content:center;align-items:flex-start;background:linear-gradient(135deg,var(--navy),#1d3c5a);color:#fff;border:0}
+.card.soon h3{color:#fff}.card.soon .tag{font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:var(--cyan)}
+.card.soon p{opacity:.8;font-size:15px;margin-top:8px}
+
+/* ---------- Contact ---------- */
+.contact{background:var(--navy);color:#fff;position:relative;overflow:hidden}
+.contact .deco{position:absolute;inset:0;z-index:0;opacity:.16;mix-blend-mode:screen}
+.contact .deco img{width:100%;height:100%;object-fit:cover}
+.contact .wrap{position:relative;z-index:1}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(36px,6vw,72px);align-items:start}
+.contact h2{font-size:clamp(30px,4.4vw,50px);margin-bottom:18px}
+.contact .intro{opacity:.85;max-width:420px}
+.contact .email-big{display:inline-block;margin-top:26px;font-size:clamp(20px,3vw,30px);font-weight:700;color:var(--cyan);border-bottom:2px solid transparent;transition:.3s}
+.contact .email-big:hover{border-color:var(--cyan)}
+form{display:grid;gap:14px}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.field{position:relative}
+input{
+  width:100%;padding:16px 18px;border-radius:12px;border:1.5px solid rgba(255,255,255,.22);
+  background:rgba(255,255,255,.06);color:#fff;font:inherit;transition:.25s;
+}
+input::placeholder{color:rgba(255,255,255,.55)}
+input:focus{outline:none;border-color:var(--cyan);background:rgba(255,255,255,.12)}
+form .btn-primary{justify-content:center;margin-top:6px}
+.newsletter{margin-top:30px;border-top:1px solid rgba(255,255,255,.16);padding-top:26px}
+.newsletter h3{font-size:18px;margin-bottom:12px}
+.nl-row{display:flex;gap:10px;flex-wrap:wrap}
+.nl-row input{flex:1;min-width:200px}
+.formnote{font-size:13px;opacity:.6;margin-top:4px}
+
+/* ---------- Footer ---------- */
+footer{background:#091825;color:#fff;padding:54px 0 36px;font-size:14px}
+.foot-grid{display:flex;justify-content:space-between;gap:28px;flex-wrap:wrap;align-items:center}
+.foot-grid img{height:26px;filter:none}
+.foot-links{display:flex;gap:22px;flex-wrap:wrap;opacity:.75}
+.foot-links a:hover{color:var(--cyan)}
+.foot-legal{display:flex;gap:20px;flex-wrap:wrap;justify-content:center;margin-top:30px;padding-top:22px;border-top:1px solid rgba(255,255,255,.12);font-size:13px;opacity:.65}
+.foot-legal a:hover{color:var(--cyan);opacity:1}
+.copy{opacity:.5;font-size:12.5px;margin-top:18px;text-align:center}
+
+/* ---------- Reveal (JS adds .in; falls back to visible) ---------- */
+.js .reveal{opacity:0;transform:translateY(28px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.reveal.in{opacity:1;transform:none}
+
+/* ---------- Mobile ---------- */
+@media(max-width:860px){
+  .about-grid,.contact-grid{grid-template-columns:1fr}
+  .figure{order:-1}
+  nav .navlink{display:none}
+  .burger{display:flex}
+  .mobile-open .navlink{display:block}
+  nav.open{position:fixed;inset:64px 0 auto 0;flex-direction:column;background:rgba(255,255,255,.97);backdrop-filter:blur(12px);padding:26px;gap:20px;box-shadow:var(--shadow)}
+  nav.open .navlink{display:block;color:var(--ink);font-size:18px}
+}
+@media(max-width:520px){.row2{grid-template-columns:1fr}}
+
+/* ---------- Animations ---------- */
+@keyframes rise{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
+@keyframes drop{0%{transform:scaleY(0);transform-origin:top}45%{transform:scaleY(1);transform-origin:top}55%{transform:scaleY(1);transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+@keyframes scrollx{to{transform:translateX(-50%)}}
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important;scroll-behavior:auto!important;transition-duration:.01ms!important}
+  .reveal{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+
+<header id="hdr">
+  <a class="brand" href="#top" aria-label="TONJA Concept home">
+    <img src="assets/img/logo_600.webp" width="600" height="155" alt="TONJA" style="height:30px;width:auto">
+  </a>
+  <nav id="nav">
+    <a class="navlink" href="#about" data-en="About" data-de="Über uns">About</a>
+    <a class="navlink" href="#stores" data-en="Stores" data-de="Stores">Stores</a>
+    <a class="navlink" href="#contact" data-en="Contact" data-de="Kontakt">Contact</a>
+    <div class="lang" role="group" aria-label="Language">
+      <button data-lang="en" class="on">EN</button>
+      <button data-lang="de">DE</button>
+    </div>
+  </nav>
+  <button class="burger" id="burger" aria-label="Menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-bg">
+      <picture>
+        <source type="image/webp" media="(max-width:699px)" srcset="assets/img/love_600.webp">
+        <source type="image/webp" srcset="assets/img/love_1600.webp">
+        <img src="assets/img/love_1600.jpg" alt="" fetchpriority="high" width="1600" height="1054">
+      </picture>
+    </div>
+    <div class="hero-inner">
+      <h1 class="wordmark"><img src="assets/img/logo_hero.webp" width="1200" height="310" alt="TONJA" fetchpriority="high"></h1>
+      <div class="tagline spaced" data-en="Design and Fashion Concept Store" data-de="Design und Fashion Concept Store">Design and Fashion Concept Store</div>
+      <p class="sub" data-en="A riot of colour, a curated world of design and fashion — bold, joyful and one of a kind." data-de="Ein Fest der Farben, eine kuratierte Welt aus Design und Mode — mutig, verspielt und einzigartig.">A riot of colour, a curated world of design and fashion — bold, joyful and one of a kind.</p>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="#stores" data-en="Find a store" data-de="Store finden">Find a store</a>
+        <a class="btn btn-ghost" href="#about" data-en="Discover TONJA" data-de="TONJA entdecken">Discover TONJA</a>
+      </div>
+    </div>
+    <div class="scrollcue" aria-hidden="true"><span></span></div>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track" id="mq">
+      <b>Basel</b><i class="star">✦</i><b>Gstaad</b><i class="star">✦</i><b>Geneva</b><i class="star">✦</i><b>Zürich soon</b><i class="star">✦</i>
+      <b>Design</b><i class="star">✦</i><b>Fashion</b><i class="star">✦</i><b>Concept Store</b><i class="star">✦</i>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="wrap about-grid">
+      <div class="reveal">
+        <div class="eyebrow" data-en="About Tonja" data-de="Über Tonja">About Tonja</div>
+        <h2 data-en="Where design becomes a celebration." data-de="Wo Design zum Fest wird.">Where design becomes a celebration.</h2>
+        <p data-en="TONJA Concept is a curated design and fashion concept store — a playful universe where colour, craft and character come first. Every piece is hand-picked: maximalist ceramics, statement fashion, art and objects you won't find anywhere else." data-de="TONJA Concept ist ein kuratierter Design- und Fashion-Concept-Store — ein verspieltes Universum, in dem Farbe, Handwerk und Charakter an erster Stelle stehen. Jedes Stück ist handverlesen: maximalistische Keramik, ausdrucksstarke Mode, Kunst und Objekte, die es so nur hier gibt.">TONJA Concept is a curated design and fashion concept store — a playful universe where colour, craft and character come first. Every piece is hand-picked: maximalist ceramics, statement fashion, art and objects you won't find anywhere else.</p>
+        <p data-en="From our home in Basel to the mountains of Gstaad and the heart of Geneva, we bring together the bold and the beautiful — and soon, Zürich joins the family." data-de="Von unserem Zuhause in Basel über die Berge von Gstaad bis ins Herz von Genf bringen wir das Mutige und das Schöne zusammen — und schon bald wird Zürich Teil der Familie.">From our home in Basel to the mountains of Gstaad and the heart of Geneva, we bring together the bold and the beautiful — and soon, Zürich joins the family.</p>
+        <div class="stat-row">
+          <div class="stat"><b>3</b><span data-en="Cities" data-de="Städte">Cities</span></div>
+          <div class="stat"><b>6</b><span data-en="Boutiques" data-de="Boutiquen">Boutiques</span></div>
+          <div class="stat"><b>1</b><span data-en="Of a kind" data-de="Einzigartig">Of a kind</span></div>
+        </div>
+      </div>
+      <div class="reveal">
+        <div class="figure">
+          <div class="blob" style="width:160px;height:160px;background:var(--pink);top:-40px;right:-30px"></div>
+          <div class="blob" style="width:120px;height:120px;background:var(--lime);bottom:-30px;left:-26px"></div>
+          <picture>
+            <source type="image/webp" srcset="assets/img/portrait_1000.webp 1000w, assets/img/portrait_600.webp 600w" sizes="(max-width:860px) 90vw, 45vw">
+            <img src="assets/img/portrait_1000.jpg" loading="lazy" decoding="async" width="1000" height="659" alt="Tonja in the concept store, surrounded by colourful design objects">
+          </picture>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STORES -->
+  <section class="stores" id="stores">
+    <div class="wrap">
+      <div class="eyebrow reveal" style="text-align:center" data-en="Find us" data-de="Besuche uns">Find us</div>
+      <h2 class="reveal" data-en="Our boutiques" data-de="Unsere Boutiquen">Our boutiques</h2>
+      <p class="lead reveal" data-en="Step inside one of our worlds across Switzerland — every store its own colourful character." data-de="Tritt ein in eine unserer Welten in der ganzen Schweiz — jeder Store mit eigenem, farbenfrohem Charakter.">Step inside one of our worlds across Switzerland — every store its own colourful character.</p>
+      <div class="store-grid">
+
+        <a class="card reveal" style="--c:var(--cyan)" href="https://maps.google.com/?q=Rheinsprung+1,+4051+Basel" target="_blank" rel="noopener">
+          <div class="city">Basel</div>
+          <h3 data-en="Main Store" data-de="Hauptgeschäft">Main Store</h3>
+          <div class="addr">Rheinsprung 1<br>4051 Basel</div>
+          <span class="tel">+41 (0)61 500 56 61</span>
+        </a>
+
+        <a class="card reveal" style="--c:var(--pink)" href="https://maps.google.com/?q=Freie+Strasse+44,+4051+Basel" target="_blank" rel="noopener">
+          <div class="city">Basel</div>
+          <h3>Archives by Tonja</h3>
+          <div class="addr">Freie Strasse 44<br>4051 Basel</div>
+          <span class="tel">+41 (0)61 500 56 62</span>
+        </a>
+
+        <a class="card reveal" style="--c:var(--lime)" href="https://maps.google.com/?q=Promenade+4,+3780+Gstaad" target="_blank" rel="noopener">
+          <div class="city">Gstaad</div>
+          <h3 data-en="Flagship" data-de="Flagship">Flagship</h3>
+          <div class="addr">Promenade 4<br>3780 Gstaad</div>
+          <span class="tel">+41 (0)33 550 01 70</span>
+        </a>
+
+        <a class="card reveal" style="--c:var(--grape)" href="https://maps.google.com/?q=Promenade+6,+3780+Gstaad" target="_blank" rel="noopener">
+          <div class="city">Gstaad</div>
+          <h3>Pierre Louis Mascia</h3>
+          <div class="addr">Promenade 6<br>3780 Gstaad</div>
+        </a>
+
+        <a class="card reveal" style="--c:var(--tang)" href="https://maps.google.com/?q=Promenade+8,+3780+Gstaad" target="_blank" rel="noopener">
+          <div class="city">Gstaad</div>
+          <h3>Max &amp; Moi</h3>
+          <div class="addr">Promenade 8<br>3780 Gstaad</div>
+        </a>
+
+        <a class="card reveal" style="--c:var(--cyan-deep)" href="https://maps.google.com/?q=Rue+de+la+Confederation+8,+1204+Geneve" target="_blank" rel="noopener">
+          <div class="city">Genève</div>
+          <h3 data-en="Geneva Store" data-de="Genf Store">Geneva Store</h3>
+          <div class="addr">Rue de la Confédération 8<br>1204 Genève</div>
+          <span class="tel">+41 (0)22 566 40 11</span>
+        </a>
+
+        <div class="card soon reveal">
+          <div class="tag" data-en="Coming soon" data-de="Bald">Coming soon</div>
+          <h3>Zürich</h3>
+          <p data-en="A new TONJA world is opening soon. Stay tuned." data-de="Eine neue TONJA-Welt eröffnet bald. Bleib dran.">A new TONJA world is opening soon. Stay tuned.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <div class="deco" aria-hidden="true">
+      <img src="assets/img/love_1000.webp" loading="lazy" width="1000" height="659" alt="">
+    </div>
+    <div class="wrap contact-grid">
+      <div class="reveal">
+        <div class="eyebrow" style="color:var(--cyan)" data-en="Say hello" data-de="Sag Hallo">Say hello</div>
+        <h2 data-en="Let's stay in touch." data-de="Bleiben wir in Kontakt.">Let's stay in touch.</h2>
+        <p class="intro" data-en="Questions, collaborations or just love at first sight? Leave your details and we'll get back to you — or drop us a line directly." data-de="Fragen, Kooperationen oder einfach Liebe auf den ersten Blick? Hinterlasse deine Daten und wir melden uns — oder schreib uns direkt.">Questions, collaborations or just love at first sight? Leave your details and we'll get back to you — or drop us a line directly.</p>
+        <a class="email-big" href="mailto:welcome@tonjaconcept.ch">welcome@tonjaconcept.ch</a>
+      </div>
+
+      <div class="reveal">
+        <!-- Netlify Forms: handled automatically on Netlify, no backend needed -->
+        <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+          <input type="hidden" name="form-name" value="contact">
+          <p hidden><label>Don't fill: <input name="bot-field"></label></p>
+          <div class="row2">
+            <div class="field"><input name="firstname" required placeholder="First name" data-en-ph="First name" data-de-ph="Vorname" autocomplete="given-name"></div>
+            <div class="field"><input name="lastname" required placeholder="Last name" data-en-ph="Last name" data-de-ph="Nachname" autocomplete="family-name"></div>
+          </div>
+          <div class="field"><input type="email" name="email" required placeholder="Email" data-en-ph="Email" data-de-ph="E-Mail" autocomplete="email"></div>
+          <div class="field"><input type="tel" name="phone" placeholder="Phone (optional)" data-en-ph="Phone (optional)" data-de-ph="Telefon (optional)" autocomplete="tel"></div>
+          <button class="btn btn-primary" type="submit" data-en="Register" data-de="Registrieren">Register</button>
+          <p class="formnote" data-en="We'll only use your details to contact you. No spam, ever." data-de="Wir nutzen deine Daten nur, um dich zu kontaktieren. Kein Spam, niemals.">We'll only use your details to contact you. No spam, ever.</p>
+        </form>
+
+        <div class="newsletter">
+          <h3 data-en="Newsletter" data-de="Newsletter">Newsletter</h3>
+          <form name="newsletter" method="POST" data-netlify="true" netlify-honeypot="bot-field2" class="nl-row">
+            <input type="hidden" name="form-name" value="newsletter">
+            <p hidden><label>Don't fill: <input name="bot-field2"></label></p>
+            <input type="email" name="email" required placeholder="Your email" data-en-ph="Your email" data-de-ph="Deine E-Mail" autocomplete="email">
+            <button class="btn btn-primary" type="submit" data-en="Subscribe" data-de="Abonnieren">Subscribe</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <img src="assets/img/logo_600.webp" width="600" height="155" alt="TONJA" style="height:26px;width:auto">
+      <div class="foot-links">
+        <a href="#about" data-en="About" data-de="Über uns">About</a>
+        <a href="#stores" data-en="Stores" data-de="Stores">Stores</a>
+        <a href="#contact" data-en="Contact" data-de="Kontakt">Contact</a>
+        <a href="mailto:welcome@tonjaconcept.ch">welcome@tonjaconcept.ch</a>
+      </div>
+    </div>
+    <div class="foot-legal">
+      <a href="impressum.html" data-en="Legal Notice" data-de="Impressum">Impressum</a>
+      <a href="agb.html" data-en="Terms" data-de="AGB">AGB</a>
+      <a href="datenschutz.html" data-en="Privacy" data-de="Datenschutz">Datenschutz</a>
+    </div>
+    <div class="copy">© <span id="yr">2026</span> TONJA Concept · Basel · Gstaad · Geneva — <span data-en="Made with colour." data-de="Mit Farbe gemacht.">Made with colour.</span></div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  // ---- Enable reveal-hiding only when JS is available ----
+  document.documentElement.classList.add('js');
+
+  // ---- Header scroll state ----
+  var hdr=document.getElementById('hdr');
+  var onScroll=function(){hdr.classList.toggle('scrolled',window.scrollY>40)};
+  onScroll();addEventListener('scroll',onScroll,{passive:true});
+
+  // ---- Mobile nav ----
+  var burger=document.getElementById('burger'),nav=document.getElementById('nav');
+  burger.addEventListener('click',function(){
+    var open=nav.classList.toggle('open');
+    burger.setAttribute('aria-expanded',open);
+  });
+  nav.addEventListener('click',function(e){if(e.target.classList.contains('navlink'))nav.classList.remove('open')});
+
+  // ---- Language toggle ----
+  var apply=function(lang){
+    document.documentElement.lang=lang;
+    document.querySelectorAll('[data-en]').forEach(function(el){
+      var v=el.getAttribute('data-'+lang);if(v!=null)el.textContent=v;
+    });
+    document.querySelectorAll('[data-en-ph]').forEach(function(el){
+      var v=el.getAttribute('data-'+lang+'-ph');if(v!=null)el.placeholder=v;
+    });
+    document.querySelectorAll('.lang button').forEach(function(b){
+      b.classList.toggle('on',b.dataset.lang===lang);
+    });
+    try{localStorage.setItem('tonja-lang',lang)}catch(e){}
+  };
+  document.querySelectorAll('.lang button').forEach(function(b){
+    b.addEventListener('click',function(){apply(b.dataset.lang)});
+  });
+  var params=new URLSearchParams(location.search);
+  var saved=null;try{saved=localStorage.getItem('tonja-lang')}catch(e){}
+  var initial=params.get('lang')||saved||(navigator.language||'en').slice(0,2);
+  apply(initial==='de'?'de':'en');
+
+  // ---- Scroll reveal (with no-IO fallback) ----
+  var reveals=document.querySelectorAll('.reveal');
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}});
+    },{threshold:.12,rootMargin:'0px 0px -8% 0px'});
+    reveals.forEach(function(el){io.observe(el)});
+  }else{
+    reveals.forEach(function(el){el.classList.add('in')});
+  }
+
+  // ---- Year ----
+  document.getElementById('yr').textContent=new Date().getFullYear();
+
+  // ---- Friendly form success ----
+  document.querySelectorAll('form[data-netlify]').forEach(function(f){
+    f.addEventListener('submit',function(){
+      var btn=f.querySelector('button[type=submit]');
+      if(btn){btn.textContent='✓';}
+    });
+  });
+})();
+</script>
+</body>
+</html>

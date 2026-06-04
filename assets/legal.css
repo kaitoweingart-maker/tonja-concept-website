@@ -1,0 +1,47 @@
+/* Shared styling for TONJA legal pages (Impressum / AGB / Datenschutz) */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--cyan:#43c3f0;--cyan-deep:#1ba6da;--navy:#0e2236;--ink:#13283d;--soft:#f4f9fc;--line:#e4edf3;--max:780px}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:"Helvetica Neue",Helvetica,Arial,system-ui,sans-serif;color:var(--ink);background:#fff;line-height:1.7;font-size:17px}
+a{color:var(--cyan-deep);text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* Header */
+.doc-head{position:sticky;top:0;z-index:10;display:flex;align-items:center;justify-content:space-between;
+  gap:16px;padding:14px clamp(16px,4vw,40px);background:rgba(255,255,255,.92);backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--line)}
+.doc-head .brand img{height:28px;width:auto;display:block}
+.doc-head .right{display:flex;align-items:center;gap:18px}
+.doc-head .back{font-size:14px;font-weight:600;color:var(--ink)}
+.doc-head .back:hover{color:var(--cyan-deep);text-decoration:none}
+.lang{display:flex;font-size:13px;font-weight:700;border:1.5px solid var(--ink);border-radius:100px;overflow:hidden}
+.lang button{background:none;border:0;color:var(--ink);cursor:pointer;padding:6px 11px;font:inherit;opacity:.5;transition:.25s}
+.lang button.on{background:var(--cyan);color:#fff;opacity:1}
+
+/* Document body */
+main{width:min(100% - 40px,var(--max));margin:0 auto;padding:clamp(40px,7vw,84px) 0 90px}
+main h1{font-size:clamp(30px,6vw,46px);line-height:1.08;letter-spacing:-.01em;margin-bottom:8px}
+main .updated{color:#7a8a98;font-size:14px;margin-bottom:40px}
+main h2{font-size:clamp(19px,3vw,23px);margin:38px 0 12px;color:var(--navy);letter-spacing:-.01em}
+main h3{font-size:17px;margin:24px 0 8px}
+main p{margin:0 0 14px}
+main ul{margin:0 0 16px 22px}
+main li{margin-bottom:6px}
+main address{font-style:normal;background:var(--soft);border:1px solid var(--line);border-left:4px solid var(--cyan);
+  border-radius:12px;padding:18px 22px;margin:18px 0;line-height:1.6}
+.todo{color:#c026637a;background:#fff0f6;border:1px dashed #f0a;border-radius:6px;padding:1px 7px;font-size:.92em;font-weight:600;white-space:nowrap}
+.note{background:var(--soft);border:1px solid var(--line);border-radius:12px;padding:16px 20px;margin:24px 0;font-size:15px;color:#46586a}
+
+/* Language visibility */
+[data-lang-content]{display:none}
+[data-lang-content].show{display:block}
+
+/* Footer */
+footer{background:#091825;color:#fff;padding:40px 0;font-size:14px;text-align:center}
+footer .wrap{width:min(100% - 40px,var(--max));margin:0 auto}
+footer a{color:#fff;opacity:.8}
+footer a:hover{color:var(--cyan);opacity:1;text-decoration:none}
+footer .links{display:flex;gap:20px;justify-content:center;flex-wrap:wrap;margin-bottom:14px}
+footer .copy{opacity:.5;font-size:12.5px}
+
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
